@@ -33,7 +33,7 @@ class Campaign(Model):
         summed = self.db.Donation.amount.sum()
         return row.donations(summed).first()[summed] or 0
 
-    @rowmethod('spended')
+    @rowmethod('spent')
     def get_spended(self, row):
         summed = self.db.Cost.amount.sum()
         return row.costs(summed).first()[summed] or 0
